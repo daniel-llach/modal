@@ -1,0 +1,16 @@
+<div class="modal">
+    <div class="contenedorModal"></div>
+    <div class="contenidoModal">
+        <div class="closeModal">x</div>
+        <% var widthBody = parseInt((Object.keys(areas).length * 25) + (Object.keys(areas).length * 2) ); %>
+        <% var widthArea = parseFloat(  (100 / Object.keys(areas).length) - 2); %>
+        <div class="bodyModal" style="width: <%- widthBody %>%;">
+            <% for( var a in areas ){ %>
+                <div class="area" id="<%-a%>" style="width:<%- widthArea %>%">
+                    <div class="titleArea"><%- areas[a]["title"] %></div>
+                    <div class="bodyArea"><%- areas[a]["content"] %></div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</div>

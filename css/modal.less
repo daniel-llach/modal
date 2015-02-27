@@ -1,0 +1,144 @@
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:normal;src:local('Open Sans'),local('OpenSans'),url('fonts/OpenSans-Regular.ttf') format('truetype')}@font-face{font-family:'Open Sans';font-weight:300;src:local('Open Sans'),local('OpenSans'),url('fonts/OpenSans-Light.ttf') format('truetype')}@font-face{font-family:'Open Sans';font-weight:700;src:local('Open Sans'),local('OpenSans'),url('fonts/OpenSans-Bold.ttf') format('truetype')}
+
+.translate (@x: -50%, @y: -50%)
+{
+    -webkit-transform: translate( @x, @y );
+    -moz-transform: translate( @x, @y );
+    -o-transform: translate( @x, @y );
+    transform: translate( @x, @y );
+}
+
+.center
+{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  .translate(-50%, -50%);
+
+}
+
+.animate(@temp: .2s)
+{
+    -webkit-transition: all @temp ease-in-out;
+    -moz-transition: all @temp ease-in-out;
+    -o-transition: all @temp ease-in-out;
+    transition: all @temp ease-in-out;
+}
+
+.shadow(@s: 2px 2px 5px rgba(50,50,50,0.41)){
+    -moz-box-shadow: @s;
+    -webkit-box-shadow: @s;
+    box-shadow: @s;
+}
+
+.radius(@r: 0 0 18px 18px){
+    -webkit-border-radius: @r;
+    -moz-border-radius: @r;
+    -ms-border-radius: @r;
+    -o-border-radius: @r;
+    border-radius: @r;
+}
+
+///// STYLE /////
+
+.modal
+{
+    .contenedorModal
+    {
+        opacity: 0.8;
+        z-index: 9999;
+        display: block;
+        width: 100%;
+        height: 1600px;
+        position: fixed;
+        z-index: 9999;
+        background-color: #fff;
+        left: -4px;
+        top: -28px;
+        opacity: .8;
+
+        .animate();
+    }
+
+    .contenidoModal
+    {
+        width: 80%;
+        max-width: 1024px;
+        min-height: 200px;
+        position: fixed;
+        z-index: 99999;
+        background-color: #fff;
+        text-align: center;
+        float: left;
+        padding-bottom: 2em;
+
+        .shadow();
+        .radius();
+        .center;
+
+        > .closeModal
+        {
+            position: absolute;
+            right: -1px;
+            width: 34px;
+            height: 32px;
+            text-align: center;
+            color: #666;
+            padding-top: 2px;
+            top: -45px;
+            cursor: pointer;
+            font-size: 1.3em;
+            z-index: 9999;
+            font-family: "open sans";
+            background: #fff;
+            .shadow();
+            .radius(50%);
+            .animate();
+
+            &:hover
+            {
+                background: #c8e2e8;
+            }
+        }
+
+        > .bodyModal
+        {
+            font-family: "open sans";
+            box-sizing: border-box;
+            //width: 50%;
+
+            .center;
+
+            > .area
+            {
+                float: left;
+                box-sizing: border-box;
+                width: 48%;
+                margin: 1%;
+
+
+                > .titleArea
+                {
+                    height: 21px;
+                    background: #8197ad;
+                    color: #fff;
+                    font-size: 12px;
+                    text-transform: uppercase;
+                    line-height: 21px;
+                    padding: 4px;
+                    font-weight: 300;
+                }
+
+                > .bodyArea
+                {
+                    padding: 4px;
+                    font-weight: 300;
+                    font-size: 12px;
+                    border: 2px solid #8197ad;
+                    box-sizing: border-box;
+                }
+            }
+        }
+    }
+}
