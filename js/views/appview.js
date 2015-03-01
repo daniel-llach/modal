@@ -9,11 +9,18 @@ define([
     //The overall Grid Component
     var AppView = Backbone.View.extend({
 
+        el: "body",
+
+        events: {
+            "click .ejemplo": "openModal"
+        },
+
         initialize: function(){
             this.initModal();
         },
 
         initModal: function(){
+
             this.areas = new Modal({
 
                 areasPerPage: 3,
@@ -37,6 +44,10 @@ define([
                 }
             });
 
+        },
+
+        openModal: function(){
+            console.log('modal');
             this.modalview = new ModalView({model:this.areas});
         }
 

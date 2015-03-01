@@ -9,6 +9,10 @@ define([
 
         el : "body",
 
+        events: {
+            "click .closeModal": "close"
+        },
+
         template: _.template(ModalTemplate),
 
         initialize: function(){
@@ -20,6 +24,10 @@ define([
 
         render: function(){
             this.$el.append( this.template(this.model.toJSON()) );
+        },
+
+        close: function(){
+            $('.modal').remove();
         }
 
     });
