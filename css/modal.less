@@ -18,6 +18,15 @@
 
 }
 
+.centerVertical
+{
+  position: absolute;
+  top: 50%;
+
+  .translate(0%, -50%);
+
+}
+
 .animate(@temp: .2s)
 {
     -webkit-transition: all @temp ease-in-out;
@@ -38,6 +47,21 @@
     -ms-border-radius: @r;
     -o-border-radius: @r;
     border-radius: @r;
+}
+
+.scale(@1: 2, @2: 4)
+{
+    -ms-transform: scale(@1, @2); /* IE 9 */
+    -webkit-transform: scale(@1, @2); /* Chrome, Safari, Opera */
+    transform: scale(@1, @2);
+}
+
+.noSelectText
+{
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 ///// STYLE /////
@@ -137,6 +161,55 @@
                     font-size: 12px;
                     border: 2px solid #8197ad;
                     box-sizing: border-box;
+
+
+                }
+            }
+
+            > #prev
+            {
+                position: absolute;
+                left: -7%;
+                color: #A8C3D6;
+                font-size: 30px;
+                cursor: pointer;
+                top: 50%;
+                font-family: "open sans";
+
+
+                -webkit-transform: translate( 0%, -50% ) scale(1, 1.5);
+                -moz-transform: translate( 0%, -50% ) scale(1, 1.5);
+                -o-transform: translate( 0%, -50% ) scale(1, 1.5);
+                transform: translate( 0%, -50% ) scale(1, 1.5);
+
+                .animate();
+
+                &:hover
+                {
+                    color: #286181;
+                }
+            }
+
+            > #next
+            {
+                position: absolute;
+                right: -7%;
+                color: #A8C3D6;
+                font-size: 30px;
+                cursor: pointer;
+                top: 50%;
+                font-family: "open sans";
+
+                -webkit-transform: translate( 0%, -50% ) scale(1, 1.5);
+                -moz-transform: translate( 0%, -50% ) scale(1, 1.5);
+                -o-transform: translate( 0%, -50% ) scale(1, 1.5);
+                transform: translate( 0%, -50% ) scale(1, 1.5);
+
+                .animate();
+
+                &:hover
+                {
+                    color: #286181;
                 }
             }
         }

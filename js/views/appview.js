@@ -24,6 +24,8 @@ define([
             this.areas = new Modal({
 
                 areasPerPage: 3,
+                start: 4,
+                end: 6,
                 areas: {
 
                     1 : {
@@ -39,6 +41,26 @@ define([
                     2 : {
                         title: "Segundo título",
                         content: "El contenido de la segunda área"
+                    },
+
+                    5 : {
+                        title: "Quinto título",
+                        content: "El contenido de la quinta área"
+                    },
+
+                    4 : {
+                        title: "Cuarto título",
+                        content: "El contenido de la cuarta área"
+                    },
+
+                    6 : {
+                        title: "Sexto título",
+                        content: "El contenido de la sexta área"
+                    },
+
+                    7 : {
+                        title: "Séptimo título",
+                        content: "El contenido de la septima área"
                     }
 
                 }
@@ -47,7 +69,7 @@ define([
         },
 
         openModal: function(){
-            console.log('modal');
+            // console.log('modal');
             this.modalview = new ModalView({model:this.areas});
         }
 

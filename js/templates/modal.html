@@ -2,15 +2,22 @@
     <div class="contenedorModal"></div>
     <div class="contenidoModal">
         <div class="closeModal">x</div>
-        <% var widthBody = parseInt((Object.keys(areas).length * 25) + (Object.keys(areas).length * 2) ); %>
-        <% var widthArea = parseFloat(  (100 / Object.keys(areas).length) - 2); %>
+        <% var widthBody = parseInt((areasPerPage * 25) + (areasPerPage * 2) ); %>
+        <% var widthArea = parseFloat(  (100 / areasPerPage) - 2); %>
         <div class="bodyModal" style="width: <%- widthBody %>%;">
-            <% for( var a in areas ){ %>
-                <div class="area" id="<%-a%>" style="width:<%- widthArea %>%">
+            <% for( var a = start; a <= end; a++ ){ %>
+                <div class="area" id="<%-areas[a]%>" style="width:<%- widthArea %>%">
                     <div class="titleArea"><%- areas[a]["title"] %></div>
                     <div class="bodyArea"><%- areas[a]["content"] %></div>
                 </div>
             <% } %>
+            <% if( start >= areasPerPage){ %>
+                    <div id="prev"><</div>
+                <% } %>
+                <% if( end <= Object.keys(areas).length -1 ){ %>
+                    <div id="next">></div>
+            <% } %>
+
         </div>
     </div>
 </div>
