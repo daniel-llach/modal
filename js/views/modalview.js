@@ -7,37 +7,38 @@ define([
 
     var ModalView = Backbone.View.extend({
 
-        el : "body",
+        className: "modal",
 
         events: {
             "click .closeModal": "close",
+            "click .contenedorModal": "close",
             "click #prev": "prev",
             "click #next": "next"
         },
 
         template: _.template(ModalTemplate),
 
-        initialize: function(){
-            // this.$el = $(this.model.get("target"));
-            // this.listenTo(this.model, "change:loaded", this.update);
+        initialize: function(options){
+            this.$container = $(options.selector);
             this.render();
+            this.$container.append(this.$el);
             this.paginator();
             this.listenTo(this.model, "change:start", this.render);
         },
 
         render: function(){
-            $('.modal').remove();
-            this.$el.append( this.template(this.model.toJSON()) );
+            this.$el.html( this.template(this.model.toJSON()) );
+
         },
 
         close: function(){
-            $('.modal').remove();
+            this.unbind();
+            this.remove();
         },
 
         paginator: function(){
             this.start = 0;
             this.end = 3;
-            console.log("view: ", this.end);
         },
 
         prev: function(){
@@ -51,7 +52,7 @@ define([
             }
             var newEnd = newStart + areasPerPage - 1;
             this.model.set({"start":newStart, "end":newEnd});
-            console.log(start, end);
+
         },
 
         next: function(){
@@ -70,7 +71,6 @@ define([
             }
 
             this.model.set({"start":newStart, "end":newEnd});
-            console.log(start, end);
         }
 
     });

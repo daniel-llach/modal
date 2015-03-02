@@ -8,26 +8,30 @@ define([
         defaults: function () {
             return {
                 areasPerPage: 3,
-                start: 0,
+                start: 1,
                 end: 3,
+                titles: [""],
                 areas: {
 
                     1 : {
                         title: "Primer título",
                         content: "El contenido de la primera área"
+                    },
+
+                    2 : {
+                        title: "Segundo título",
+                        content: "El contenido de la segundo área"
+                    },
+
+                    3 : {
+                        title: "Tercer título",
+                        content: "El contenido de la tercera área"
                     }
                 }
             };
         },
 
         initialize: function(){
-            this.paginator();
-        },
-
-        paginator: function(){
-            this.start = 0;
-            this.end = this.get("areasPerPage");
-            this.totalPage = Object.keys(this.get("areas")).length / this.end;
         }
     });
 

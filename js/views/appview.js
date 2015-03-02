@@ -23,14 +23,15 @@ define([
 
             this.areas = new Modal({
 
-                areasPerPage: 3,
-                start: 4,
-                end: 6,
+                areasPerPage: 1,
+                start: 1,
+                end: 1,
+                titles: ["LLAVE"],
                 areas: {
 
                     1 : {
-                        title: "Primer título",
-                        content: "El contenido de la primera área"
+                        title: "NOMBRE",
+                        content: "<input type=\"text\" value=\"UMD\">"
                     },
 
                     3 : {
@@ -70,7 +71,7 @@ define([
 
         openModal: function(){
             // console.log('modal');
-            this.modalview = new ModalView({model:this.areas});
+            this.modalview = new ModalView({model:this.areas, selector:"body"});
         }
 
     });

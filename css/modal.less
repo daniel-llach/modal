@@ -101,6 +101,34 @@
         .radius();
         .center;
 
+        > .title
+        {
+            > h1
+            {
+                padding-bottom: 0;
+                text-transform: uppercase;
+                font-size: 17px;
+                color: #fff;
+                font-weight: 300;
+                float: left;
+                border-bottom: 2px solid #a8c3d6;
+                width: 100%;
+                text-align: left;
+                font-family: "Open sans";
+                background: #c8d5de;
+                padding: 0 7px;
+                box-sizing: border-box;
+                position: absolute;
+                top: 0;
+                left: 0;
+                margin: 0;
+                cursor: default;
+                text-indent: 2%;
+
+                .noSelectText;
+            }
+        }
+
         > .closeModal
         {
             position: absolute;
@@ -162,14 +190,42 @@
                     border: 2px solid #8197ad;
                     box-sizing: border-box;
 
+                    > input
+                    {
+                        border: none;
+                        color: #286186;
+                        box-shadow: 0 0 0 #FFFFFF;
+
+                        -webkit-animation: pulse 1s infinite; /* Chrome, Safari, Opera */
+                        animation: pulse 1s infinite;
+
+                        &[type="text"]
+                        {
+                            width: 100%;
+                            text-align: center;
+                            padding: 6px;
+                            box-sizing: border-box;
+                            height: 26px;
+                            background: #F8F9FA;
+
+                            &:focus
+                            {
+                                outline: none;
+
+                            }
+                        }
+                    }
 
                 }
             }
 
-            > #prev
+
+        }
+
+        > #prev
             {
                 position: absolute;
-                left: -7%;
+                left: 5%;
                 color: #A8C3D6;
                 font-size: 30px;
                 cursor: pointer;
@@ -193,7 +249,7 @@
             > #next
             {
                 position: absolute;
-                right: -7%;
+                right: 5%;
                 color: #A8C3D6;
                 font-size: 30px;
                 cursor: pointer;
@@ -212,6 +268,5 @@
                     color: #286181;
                 }
             }
-        }
     }
 }
