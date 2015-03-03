@@ -23,10 +23,10 @@ define([
 
             this.areas = new Modal({
 
-                areasPerPage: 1,
+                areasPerPage: 3,
                 start: 1,
-                end: 1,
-                titles: ["LLAVE"],
+                end: 3,
+                titles: ["EDITANDO: <b>LLAVE</b>"],
                 areas: {
 
                     1 : {
@@ -36,7 +36,7 @@ define([
 
                     3 : {
                         title: "Tercer título",
-                        content: "El contenido de la tercera área"
+                        content: "El contenido de la segunda área"
                     },
 
                     2 : {
@@ -44,7 +44,7 @@ define([
                         content: "El contenido de la segunda área"
                     },
 
-                    5 : {
+                    8 : {
                         title: "Quinto título",
                         content: "El contenido de la quinta área"
                     },
